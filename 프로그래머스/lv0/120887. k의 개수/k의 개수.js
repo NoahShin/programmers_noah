@@ -8,3 +8,13 @@ function solution(i, j, k) {
     
     return count;
 }
+
+// 와.. 여집합 스플릿으로 분리
+// function solution(i, j, k) {
+//     let a ='';
+//     for(i;i<=j;i++){
+//         a += i;
+//     }
+
+//     return a.split(k).length-1;
+// }
