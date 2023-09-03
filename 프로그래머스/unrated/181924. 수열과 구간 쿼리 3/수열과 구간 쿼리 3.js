@@ -9,3 +9,11 @@ function solution(arr, queries) {
     })
     return arr;
 }
+
+// 구조분해 할당 바로
+// function solution(arr, queries) {
+//     queries.forEach( ([a,b]) => {
+//         [arr[a],arr[b]] = [arr[b],arr[a]];
+//     })
+//     return arr;
+// }
