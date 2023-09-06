@@ -11,4 +11,11 @@
 //     }, arr)
 // }
 
-const solution=(a,q)=>q.length?solution(a.map((v,i)=>i>=q[0][0]&&i<=q[0][1]&&!(i%q[0][2])?v+1:v),q.slice(1)):a
+function solution(arr, queries) {
+    for(let [s, e, k] of queries) {
+        for(let i = s; i <= e; i++) {
+            if(i % k === 0) arr[i]++;
+        }
+    }
+    return arr;
+}
