@@ -8,3 +8,5 @@ function solution(q, r, code) {
     })
     return aa.join('')
 }
+
+// 아 필터 쓰면 한방에 되는데..
