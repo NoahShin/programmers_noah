@@ -8,3 +8,8 @@ function solution(spell, dic) {
 
     return isSameExist ? 1 : 2
 }
+
+// 와.. sort() 쓰면 다 돌 필요 없었네...
+// function solution(p, d) {
+//     return d.some(s => p.sort().toString() == [...s].sort().toString()) ? 1 : 2;
+// }
