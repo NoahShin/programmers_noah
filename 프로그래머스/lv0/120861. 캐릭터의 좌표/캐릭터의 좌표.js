@@ -1,28 +1,12 @@
-const keySetting = {
-    left:[-1,0],
-    right:[1,0],
-    up:[0,1],
-    down:[0,-1]
-}
-
-const isValidLocation = (nowRIdx,nowCIdx,minRIdx,maxRIdx,minCIdx,maxCIdx) => {
-    return minRIdx <= nowRIdx && nowRIdx <= maxRIdx && minCIdx <= nowCIdx && nowCIdx <= maxCIdx
-}
-
 function solution(keyinput, board) {
-    let rIdx=0,cIdx=0
-    const minRIdx = -Math.floor(board[0]/2), maxRIdx = Math.floor(board[0]/2)
-    const minCIdx = -Math.floor(board[1]/2), maxCIdx = Math.floor(board[1]/2)
-
-    keyinput.forEach((key)=>{
-        const [addRIdx,addCIdx] = keySetting[key]
-        const newRIdx = rIdx+addRIdx
-        const newCIdx = cIdx+addCIdx
-        if(isValidLocation(newRIdx,newCIdx,minRIdx,maxRIdx,minCIdx,maxCIdx)){
-            rIdx = newRIdx
-            cIdx = newCIdx
+    let res = [0,0];
+    for (let p of keyinput) {
+        switch(p){
+            case 'left': if (-res[0] < board[0]/2-1) res[0]--; break;
+            case 'right': if (res[0] < board[0]/2-1) res[0]++; break;
+            case 'up': if (res[1] < board[1]/2-1) res[1]++; break;
+            case 'down': if (-res[1] < board[1]/2-1) res[1]--; break;
         }
-    })
-
-    return [rIdx,cIdx]
+    }
+    return res;
 }
