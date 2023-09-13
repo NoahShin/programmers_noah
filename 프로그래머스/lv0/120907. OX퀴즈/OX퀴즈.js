@@ -1,12 +1,8 @@
 function solution(quiz) {
-    const arr = [];
-    quiz.forEach((x) => {
+    return quiz.map((x) => {
         const split = x.split('=')
-        const left = split[0]
-        const right = split[1]
+        const [left, right] = [split[0], split[1]]
         const result = eval(left)
-        return result == Number(right) ? arr.push('O') : arr.push('X')
+        return result == Number(right) ? 'O' : 'X'
     })
-    
-    return arr;
 }
